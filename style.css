@@ -98,19 +98,19 @@ nav ul li a:hover {
 }
 
 .website-card img {
-    max-width: 50%; /* Reduced max width for images */
+    max-width: 10%; /* Reduced max width for images */
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .website-card.large {
-    flex: 1 1 50%; /* Full width for large cards */
+    flex: 1 1 20%; /* Full width for large cards */
 }
 
 .website-card.small,
 .website-card.medium {
-    flex: 1 1 calc(50% - 20px); /* Half width for small and medium cards */
+    flex: 1 1 calc(10% - 20px); /* Half width for small and medium cards */
 }
 
 .website-card:hover {
