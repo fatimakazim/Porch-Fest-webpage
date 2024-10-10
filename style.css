@@ -1,64 +1,51 @@
+/* General styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.changa-one-regular {
-    font-family: 'Changa One', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.changa-one-regular-italic {
-    font-family: 'Changa One', sans-serif;
-    font-weight: 400;
-    font-style: italic;
 }
 
 body {
     background-image: url('bg.png');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 0;
 }
-
 
 .container {
     width: 100%;
     min-height: 100vh;
-    padding: 0 8%;
+    padding: 10px;
 }
 
+/* Navbar */
 .navbar {
-    height: 80px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
-.logo {
-    width: 120px;
+.navbar img.logo {
+    width: 100px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center;
+    gap: 15px;
 }
 
 nav ul li {
-    margin-left: 40px;
+    list-style: none;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: white;
     padding: 5px 10px;
-    transition: background 0.3s ease;
+    transition: background 0.3s;
 }
 
 nav ul li a:hover {
@@ -66,7 +53,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Centered image */
+/* Header */
 .header {
     display: flex;
     justify-content: center;
@@ -74,120 +61,83 @@ nav ul li a:hover {
 }
 
 .centered-image {
-    max-width: 80%; /* Set the max width of the centered image */
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    max-height: 400px; /* Add a max height if needed */
 }
 
 /* Card grid */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
-    margin: 30px 0;
+    margin-top: 20px;
 }
 
 .website-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.website-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: opacity 0.3s ease;
+.website-card h5 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 10px;
 }
 
-/* Performers Image Specific Styling */
-.performers-image {
-    width: 100%; 
-    max-width: 250px; /* Limit the size of the performers image */
+.website-card img {
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .website-card:hover {
     transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.website-card h5 {
-    font-size: 1.6rem;
-    color: #ffffff;
-    margin-bottom: 12px;
-}
-
-.website-card p {
-    font-size: 0.9rem;
-    color: #dddddd;
-}
-
-/* Card sizes */
-.large {
-    grid-column: span 1;
-}
-
-.medium {
-    grid-column: span 1;
-}
-
-.small {
-    grid-column: span 1;
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-    }
+/* Responsive Styles */
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
+        align-items: center;
     }
-}
 
-@media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
-    
+
     .website-card {
-        padding: 15px;
+        padding: 10px;
     }
-    
+
     .website-card h5 {
         font-size: 1.4rem;
-    }
-    
-    .website-card p {
-        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        width: 100px;
+    .navbar img.logo {
+        width: 80px;
     }
-    
-    nav ul li {
-        margin-left: 20px;
+
+    .centered-image {
+        width: 90%;
     }
-    
+
     .grid-container {
-        grid-gap: 10px;
+        grid-gap: 15px;
     }
-    
-    .website-card {
-        padding: 10px;
+
+    .website-card h5 {
+        font-size: 1.2rem;
     }
 }
+
 
