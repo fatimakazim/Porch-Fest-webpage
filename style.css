@@ -70,7 +70,7 @@ nav ul li a:hover {
     height: auto;
 }
 
-/* Card grid using flexbox */
+/* Button grid using flexbox */
 .grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -79,41 +79,33 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-/* Website cards */
-.website-card {
+/* Website buttons */
+.website-button {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 10px; /* Reduced padding */
+    border: none;
+    border-radius: 10px; /* Use the same border radius as before */
+    padding: 10px;
     text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    flex: 1 1 calc(30% - 20px); /* Reduced size for cards */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    flex: 1 1 calc(30% - 20px); /* Maintain the size of buttons */
 }
 
-.website-card h5 {
-    font-family: 'Changa One', sans-serif;
-    font-size: 1.4rem; /* Slightly reduced font size */
-    color: white;
-    margin-bottom: 10px;
-}
-
-.website-card img {
-    max-width: 100%; /* Set to full width for better responsiveness */
+.button-image {
+    max-width: 80%; /* Limit image size for better appearance */
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Spacing between image and text */
 }
 
-.website-card.large {
-    flex: 1 1 20%; /* Full width for large cards */
+.website-button h5 {
+    font-family: 'Changa One', sans-serif;
+    font-size: 1.2rem; /* Adjust font size */
+    color: white;
 }
 
-.website-card.small,
-.website-card.medium {
-    flex: 1 1 calc(50% - 20px); /* Half width for small and medium cards */
-}
-
-.website-card:hover {
+/* Hover effects */
+.website-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-5px);
 }
 
@@ -129,13 +121,12 @@ nav ul li a:hover {
         gap: 10px;
     }
 
-    .website-card {
-        padding: 10px; /* Keep padding reduced */
+    .website-button {
         flex: 1 1 100%; /* Full width on smaller screens */
     }
 
-    .website-card h5 {
-        font-size: 1.2rem; /* Reduced font size */
+    .website-button h5 {
+        font-size: 1rem; /* Adjust font size */
     }
 }
 
@@ -152,8 +143,8 @@ nav ul li a:hover {
         gap: 15px;
     }
 
-    .website-card h5 {
-        font-size: 1rem; /* Further reduced font size */
+    .website-button h5 {
+        font-size: 0.9rem; /* Further reduced font size */
     }
 }
 
