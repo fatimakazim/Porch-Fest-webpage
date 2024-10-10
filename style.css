@@ -75,7 +75,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -87,7 +87,7 @@ nav ul li a:hover {
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    flex: 1 1 calc(30% - 20px); /* Reduced size for cards */
+    flex: 1 1 calc(10% - 20px); /* Reduced size for cards */
 }
 
 .website-card h5 {
@@ -98,14 +98,14 @@ nav ul li a:hover {
 }
 
 .website-card img {
-    max-width: 80%; /* Reduced max width for images */
+    max-width: 50%; /* Reduced max width for images */
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .website-card.large {
-    flex: 1 1 100%; /* Full width for large cards */
+    flex: 1 1 50%; /* Full width for large cards */
 }
 
 .website-card.small,
@@ -131,7 +131,7 @@ nav ul li a:hover {
 
     .website-card {
         padding: 10px; /* Keep padding reduced */
-        flex: 1 1 100%; /* Full width on smaller screens */
+        flex: 1 1 50%; /* Full width on smaller screens */
     }
 
     .website-card h5 {
