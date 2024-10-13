@@ -3,6 +3,7 @@ let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 80; // Size of the buttons
 const BUTTON_SPACING = 20; // Spacing between buttons
+const BUTTON_VERTICAL_SPACING = 50; // Space between centered image and buttons
 const BUTTON_IMAGES = [
   'image1.png', // Replace with your image URLs
   'image2.png',
@@ -32,7 +33,7 @@ function setup() {
   // Create buttons with images positioned to fit together
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust x position with spacing
-    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust y position with spacing
+    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING; // Adjust y position with vertical spacing
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
   }
 }
@@ -54,7 +55,7 @@ function draw() {
   }
 }
 
-// Particle class definition remains unchanged
+// Particle class definition
 class Particle {
   constructor(startX, startY) {
     this.x = startX;
