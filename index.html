@@ -14,17 +14,20 @@
             overflow: hidden; /* Ensure the canvas fills the page without scrollbars */
         }
 
-        .container {
-            position: relative;
-            z-index: 1; /* Bring the content above the sketch */
-        }
-
-        /* Position the sketch behind all content */
+        /* Set canvas to fill the entire window */
         canvas {
             position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1; /* Send the canvas to the back */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1; /* Bring the content above the sketch */
+            color: #fff; /* Change text color to make it visible on dark background */
         }
 
         .navbar {
@@ -56,6 +59,10 @@
             padding: 50px 0;
         }
 
+        .centered-image {
+            max-width: 100%; /* Ensure the image scales properly */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
 </head>
 <body>
@@ -74,7 +81,6 @@
             <h1></h1>
             <img src="your-image.png" alt="Centered Image" class="centered-image">
         </header>
-
     </div>
 
     <!-- Add the p5.js library and your custom sketch.js -->
@@ -82,4 +88,3 @@
     <script src="sketch.js"></script>
 </body>
 </html>
-

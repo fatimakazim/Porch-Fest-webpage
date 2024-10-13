@@ -21,6 +21,13 @@ const BUTTON_LINKS = [
   'https://link6.com'
 ];
 
+let backgroundImage; // Variable to hold the background image
+
+function preload() {
+  // Load the background image
+  backgroundImage = loadImage('background-image.jpg'); // Replace with your background image URL
+}
+
 function setup() {
   // Adjust the canvas size to the screen width and height
   createCanvas(windowWidth, windowHeight);
@@ -39,8 +46,8 @@ function setup() {
 }
 
 function draw() {
-  // Set the background color to dark blue
-  background('#19226D');
+  // Set the background to the loaded image
+  image(backgroundImage, 0, 0, width, height);
 
   // Update and display particles
   for (let i = 0; i < particles.length; i++) {
@@ -136,3 +143,4 @@ function mousePressed() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
