@@ -107,6 +107,7 @@ nav ul li a {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns for smaller screens */
         gap: 15px; /* Keep gap the same */
+        margin: 0; /* Remove margin for more uniformity */
     }
 }
 
