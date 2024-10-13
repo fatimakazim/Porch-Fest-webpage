@@ -56,11 +56,10 @@ nav ul li a {
     height: auto;
 }
 
-/* Button grid using flexbox */
+/* Button grid using grid layout */
 .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
     gap: 10px;
     margin-top: 20px;
 }
@@ -74,7 +73,7 @@ nav ul li a {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    width: 48%; /* Adjust to make buttons smaller and fit two next to each other */
+    width: 100%; /* Ensure the buttons take up full width within the grid */
     box-sizing: border-box;
 }
 
@@ -104,11 +103,8 @@ nav ul li a {
     }
 
     .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns for tablets and smaller */
         gap: 10px;
-    }
-
-    .website-button {
-        width: 48%; /* Make two buttons appear side by side on mobile */
     }
 }
 
@@ -121,8 +117,12 @@ nav ul li a {
         width: 90%;
     }
 
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Ensure 2 buttons per row on small screens */
+        gap: 15px;
+    }
+
     .website-button {
-        width: 48%; /* Keep buttons smaller on small screens */
         padding: 8px;
     }
 
