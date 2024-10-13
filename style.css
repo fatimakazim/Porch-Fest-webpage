@@ -59,9 +59,10 @@ nav ul li a {
 /* Button grid using grid layout */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
-    gap: 10px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns */
+    gap: 15px; /* Space between buttons */
+    margin: 20px;
+    justify-items: center; /* Center buttons */
 }
 
 /* Website buttons */
@@ -73,19 +74,20 @@ nav ul li a {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    width: 100%; /* Ensure the buttons take up full width within the grid */
+    width: 100px; /* Fix button width */
+    height: 100px; /* Fix button height */
     box-sizing: border-box;
 }
 
 .button-image {
-    width: 50px; /* Limit image size for smaller buttons */
+    width: 50px; /* Image size */
     height: 50px;
     margin-bottom: 5px;
 }
 
 .website-button h5 {
     font-family: 'Changa One', sans-serif;
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
     color: white;
 }
 
@@ -103,8 +105,8 @@ nav ul li a {
     }
 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns for tablets and smaller */
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns for smaller screens */
+        gap: 15px;
     }
 }
 
@@ -118,12 +120,14 @@ nav ul li a {
     }
 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Ensure 2 buttons per row on small screens */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* Ensure 2 buttons per row */
+        gap: 20px; /* Adjust gap for more space on mobile */
     }
 
     .website-button {
-        padding: 8px;
+        padding: 10px;
+        width: 90px; /* Slightly smaller buttons for mobile */
+        height: 90px;
     }
 
     .website-button h5 {
