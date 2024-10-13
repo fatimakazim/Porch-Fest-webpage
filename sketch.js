@@ -1,8 +1,8 @@
 let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
-const BUTTON_SIZE = 80; // Size of the buttons
-const BUTTON_SPACING = 20; // Spacing between buttons
+const BUTTON_SIZE = 90; // Size of the buttons
+const BUTTON_SPACING = 90; // Spacing between buttons
 const BUTTON_VERTICAL_SPACING = 50; // Space between centered image and buttons
 const BUTTON_IMAGES = [
   'image1.png', // Replace with your image URLs
