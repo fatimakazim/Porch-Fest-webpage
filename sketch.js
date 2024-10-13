@@ -2,7 +2,7 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90; // Size of the buttons
-const BUTTON_SPACING = windowWidth * 0.1; // Set spacing based on window width
+const BUTTON_SPACING = 190; // Spacing between buttons
 const BUTTON_VERTICAL_SPACING = 90; // Space between centered image and buttons
 const BUTTON_IMAGES = [
   'image1.png', // Replace with your image URLs
@@ -32,15 +32,8 @@ function setup() {
 
   // Create buttons with images positioned to fit together
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
-    let x = (width / 2) + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
-    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING;
-    
-    // Stack buttons vertically if the screen width is below a certain threshold
-    if (windowWidth < 600) { // Example threshold for mobile devices
-      x = width / 2; // Center horizontally
-      y = height / 2 + i * (BUTTON_SIZE + BUTTON_SPACING); // Stack vertically
-    }
-    
+    let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust x position with spacing
+    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING; // Adjust y position with vertical spacing
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
   }
 }
@@ -143,4 +136,3 @@ function mousePressed() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-
