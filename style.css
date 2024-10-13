@@ -1,141 +1,177 @@
+
 /* General styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+ }
+ 
+ 
+ body {
     background-image: url('bg.png');
     background-size: cover;
     background-position: center;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-}
-
-.container {
+ }
+ 
+ 
+ .container {
     width: 100%;
     min-height: 100vh;
     padding: 10px;
-}
-
-/* Navbar */
-.navbar {
+ }
+ 
+ 
+ /* Full width class */
+ .full-width {
+    width: 100%;
+ }
+ 
+ 
+ /* Navbar */
+ .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
-}
-
-.navbar img.logo {
-    width: 80px;
-}
-
-nav ul {
+ }
+ 
+ 
+ .navbar img.logo {
+    width: 100px;
+ }
+ 
+ 
+ nav ul {
     list-style: none;
     display: flex;
     gap: 15px;
-}
-
-nav ul li a {
+ }
+ 
+ 
+ nav ul li {
+    list-style: none;
+ }
+ 
+ 
+ nav ul li a {
     text-decoration: none;
     color: white;
     padding: 5px 10px;
     transition: background 0.3s;
-}
-
-/* Header */
-.header {
+ }
+ 
+ 
+ nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+ }
+ 
+ 
+ /* Header */
+ .header {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-}
-
-.centered-image {
-    max-width: 90%;
+ }
+ 
+ 
+ .centered-image {
+    max-width: 500px;
     height: auto;
-}
-
-/* Button grid using grid layout */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns */
-    gap: 15px; /* Space between buttons */
-    margin: 20px;
-    justify-items: center; /* Center buttons */
-}
-
-/* Website buttons */
-.website-button {
+ }
+ 
+ 
+ /* Button grid using flexbox */
+ .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+ }
+ 
+ 
+ /* Website buttons */
+ .website-button {
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Use the same border radius as before */
     padding: 10px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    width: 100px; /* Fixed button width */
-    height: 100px; /* Fixed button height */
-    box-sizing: border-box;
-}
-
-.button-image {
-    width: 50px; /* Image size */
-    height: 50px;
-    margin-bottom: 5px;
-}
-
-.website-button h5 {
+    flex: 1 1 calc(30% - 20px); /* Maintain the size of buttons */
+ }
+ 
+ 
+ .button-image {
+    max-width: 80%; /* Limit image size for better appearance */
+    height: auto;
+    margin-bottom: 5px; /* Spacing between image and text */
+ }
+ 
+ 
+ .website-button h5 {
     font-family: 'Changa One', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem; /* Adjust font size */
     color: white;
-}
-
-/* Hover effects */
-.website-button:hover {
+ }
+ 
+ 
+ /* Hover effects */
+ .website-button:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-3px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
+    transform: translateY(-5px);
+ }
+ 
+ 
+ /* Responsive Styles */
+ @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: center;
     }
-
+ 
+ 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Ensure 2 columns for smaller screens */
-        gap: 15px; /* Keep gap the same */
-        margin: 0; /* Remove margin for more uniformity */
+        flex-direction: column;
+        gap: 10px;
     }
-}
-
-@media (max-width: 480px) {
+ 
+ 
+    .website-button {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+ 
+ 
+    .website-button h5 {
+        font-size: 1rem; /* Adjust font size */
+    }
+ }
+ 
+ 
+ @media (max-width: 480px) {
     .navbar img.logo {
-        width: 70px;
+        width: 80px;
     }
-
+ 
+ 
     .centered-image {
         width: 90%;
     }
-
+ 
+ 
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Ensure 2 buttons per row */
-        gap: 20px; /* Adjust gap for more space on mobile */
-        padding: 0 10px; /* Add padding to the container for edges */
+        gap: 15px;
     }
-
-    .website-button {
-        padding: 10px;
-        width: 90px; /* Slightly smaller buttons for mobile */
-        height: 90px;
-    }
-
+ 
+ 
     .website-button h5 {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Further reduced font size */
     }
-}
-
+ }
+ 
 
  

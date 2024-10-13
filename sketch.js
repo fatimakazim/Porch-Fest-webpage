@@ -1,5 +1,24 @@
 let NUM_OF_PARTICLES = 11;
 let particles = [];
+let buttons = [];
+const BUTTON_SIZE = 80; // Size of the buttons
+const BUTTON_SPACING = 20; // Spacing between buttons
+const BUTTON_IMAGES = [
+  'image1.png', // Replace with your image URLs
+  'image2.png',
+  'image3.png',
+  'image4.png',
+  'image5.png',
+  'image6.png'
+];
+const BUTTON_LINKS = [
+  'https://link1.com', // Replace with your desired links
+  'https://link2.com',
+  'https://link3.com',
+  'https://link4.com',
+  'https://link5.com',
+  'https://link6.com'
+];
 
 function setup() {
   // Adjust the canvas size to the screen width and height
@@ -9,20 +28,33 @@ function setup() {
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
     particles[i] = new Particle(random(width), 0);
   }
+
+  // Create buttons with images positioned to fit together
+  for (let i = 0; i < BUTTON_IMAGES.length; i++) {
+    let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust x position with spacing
+    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust y position with spacing
+    buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
+  }
 }
 
 function draw() {
   // Set the background color to dark blue
   background('#19226D');
 
-  // Update and display particles (now autumn leaves)
+  // Update and display particles
   for (let i = 0; i < particles.length; i++) {
     let p = particles[i];
     p.update();
     p.display();
   }
+
+  // Display buttons
+  for (let button of buttons) {
+    button.display();
+  }
 }
 
+// Particle class definition remains unchanged
 class Particle {
   constructor(startX, startY) {
     this.x = startX;
@@ -65,7 +97,42 @@ class Particle {
   }
 }
 
+// ImageButton class definition with clickable links
+class ImageButton {
+  constructor(x, y, size, imgPath, link) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.img = loadImage(imgPath); // Load the image
+    this.link = link; // Store the link
+  }
+
+  display() {
+    push();
+    translate(this.x, this.y);
+    imageMode(CENTER);
+    image(this.img, 0, 0, this.size, this.size); // Draw the image as a button
+    pop();
+  }
+
+  // Check if the button is clicked
+  isMouseOver() {
+    return mouseX > this.x - this.size / 2 && mouseX < this.x + this.size / 2 &&
+           mouseY > this.y - this.size / 2 && mouseY < this.y + this.size / 2;
+  }
+}
+
+// Handle mouse clicks
+function mousePressed() {
+  for (let button of buttons) {
+    if (button.isMouseOver()) {
+      window.open(button.link, '_blank'); // Open the link in a new tab
+    }
+  }
+}
+
 // Automatically resize the canvas when the window is resized
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
