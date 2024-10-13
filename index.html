@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porch Fest web page</title>
+    <title>Porch Fest Web Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Ensure the canvas fills the page without scrollbars */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1; /* Bring the content above the sketch */
+        }
+
+        /* Position the sketch behind all content */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Send the canvas to the back */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .website-button {
+            text-align: center;
+            width: 100px; /* Set width for square */
+            height: 100px; /* Set height for square */
+        }
+
+        .website-button img {
+            width: 80px; /* Slightly smaller to fit inside the square button */
+            height: 80px;
+        }
+
+        .website-button h5 {
+            font-family: 'Changa One', sans-serif;
+            color: white;
+            font-size: 0.8rem; /* Adjust font size for smaller buttons */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -21,6 +94,7 @@
         </div>
 
         <header class="header">
+            <h1></h1>
             <img src="your-image.png" alt="Centered Image" class="centered-image">
         </header>
 
@@ -56,10 +130,12 @@
             </a>
         </section>
     </div>
+
+    <!-- Add the p5.js library and your custom sketch.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch.js"></script>
 </body>
 </html>
-
-
 
 
 
