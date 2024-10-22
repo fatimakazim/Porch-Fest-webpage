@@ -10,6 +10,7 @@
  body {
     background-image: url('bg.png');
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -90,6 +91,7 @@
     justify-content: space-between;
     gap: 10px;
     margin-top: 20px;
+    min-height: 100vh;
  }
  
  
@@ -103,6 +105,7 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     flex: 1 1 calc(30% - 20px); /* Maintain the size of buttons */
+    min-height: 150px; /* Ensure there's enough height for content */
  }
  
  
