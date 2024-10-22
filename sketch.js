@@ -3,7 +3,7 @@ let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90;
 const BUTTON_SPACING = 120;
-const BUTTON_VERTICAL_SPACING = 150;
+const BUTTON_VERTICAL_SPACING = 10;
 const BUTTON_IMAGES = [
   'image1.png',
   'image2.png',
