@@ -2,8 +2,9 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90;
+const BUTTON_VERTICAL_SPACING = 0;
 const BUTTON_SPACING = 120;
-const BUTTON_VERTICAL_SPACING = 10;
+
 const BUTTON_IMAGES = [
   'image1.png',
   'image2.png',
@@ -35,7 +36,7 @@ function setup() {
     particles[i] = new Particle(random(width), 0);
   }
     // Adjust the BUTTON_VERTICAL_SPACING to a smaller value
-    const reducedVerticalSpacing = 20; // Reduced vertical space between image and buttons
+    const reducedVerticalSpacing = 5; // Reduced vertical space between image and buttons
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
