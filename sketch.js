@@ -2,8 +2,8 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90; // Size of the buttons
-const BUTTON_SPACING = 190; // Spacing between buttons
-const BUTTON_VERTICAL_SPACING = 90; // Space between centered image and buttons
+const BUTTON_SPACING = 120; // Adjusted spacing between buttons
+const BUTTON_VERTICAL_SPACING = 50; // Adjusted vertical spacing between buttons and center image
 const BUTTON_IMAGES = [
   'image1.png', // Replace with your image URLs
   'image2.png',
@@ -40,14 +40,14 @@ function setup() {
   // Create buttons with images positioned to fit together
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2; // Adjust x position with spacing
-    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING; // Adjust y position with vertical spacing
+    let y = height / 2 - BUTTON_IMAGES.length / 4 * (BUTTON_SIZE + BUTTON_SPACING) + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING; // Adjust y position with vertical spacing
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
   }
 }
 
 function draw() {
-  // Set the background to the loaded image
-  image(backgroundImage, 0, 0, width, height);
+  // Set the background to the loaded image and ensure it resizes with the canvas
+  background(backgroundImage); // Automatically fills the background
 
   // Update and display particles
   for (let i = 0; i < particles.length; i++) {
