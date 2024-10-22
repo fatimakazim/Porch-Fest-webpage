@@ -8,13 +8,15 @@
  
  
  body {
-    background-image: url('bg.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
- }
+   background-image: url('bg.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   min-height: 100vh; /* Ensure the body takes full height of the screen */
+   font-family: 'Segoe UI', sans-serif;
+   margin: 0;
+   padding: 0;
+}
  
  
  .container {
@@ -86,28 +88,32 @@
  
  /* Button grid using flexbox */
  .grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
-    min-height: 100vh;
- }
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   gap: 10px;
+   margin-top: 20px;
+   width: 100%;
+}
  
  
  /* Website buttons */
  .website-button {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 10px; /* Use the same border radius as before */
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    flex: 1 1 calc(30% - 20px); /* Maintain the size of buttons */
-    min-height: 150px; /* Ensure there's enough height for content */
- }
- 
+   background: rgba(255, 255, 255, 0.1);
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+   text-align: center;
+   cursor: pointer;
+   transition: background-color 0.3s, transform 0.3s;
+   flex: 1 1 calc(50% - 20px); /* Adjust the flex value for two buttons per row */
+   min-height: 150px; /* Ensure buttons have enough height */
+}
+@media (max-width: 768px) {
+   .website-button {
+       flex: 1 1 100%; /* Full width on smaller screens */
+   }
+}
  
  .button-image {
     max-width: 80%; /* Limit image size for better appearance */

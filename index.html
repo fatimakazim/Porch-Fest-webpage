@@ -25,10 +25,15 @@
         }
 
         .container {
-            position: relative;
-            z-index: 1; /* Bring the content above the sketch */
-            color: #fff; /* Change text color to make it visible on dark background */
-        }
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    min-height: 100vh; /* Ensure the container is tall enough */
+    overflow: auto; /* Allow scrolling in case of overflow */
+    display: flex;
+    flex-direction: column;
+}
+
 
         .navbar {
             display: flex;
