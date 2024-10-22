@@ -34,6 +34,8 @@ function setup() {
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
     particles[i] = new Particle(random(width), 0);
   }
+    // Adjust the BUTTON_VERTICAL_SPACING to a smaller value
+    const reducedVerticalSpacing = 20; // Reduced vertical space between image and buttons
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
