@@ -35,12 +35,14 @@ function setup() {
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
     particles[i] = new Particle(random(width), 0);
   }
-    // Adjust the BUTTON_VERTICAL_SPACING to a smaller value
-    const reducedVerticalSpacing = 5; // Reduced vertical space between image and buttons
+
+  // Adjust the BUTTON_VERTICAL_SPACING to a smaller value
+  const reducedVerticalSpacing = 5; // Reduced vertical space between image and buttons
+  const buttonStartY = height / 4; // Change this value to move buttons higher
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
-    let y = height / 2 + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING;
+    let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING;
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
   }
 }
@@ -126,4 +128,3 @@ function mousePressed() {
 function windowResized() {
   resizeCanvas(windowWidth, max(windowHeight, 1500));
 }
-

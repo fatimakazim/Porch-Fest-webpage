@@ -75,7 +75,7 @@ nav ul li a:hover {
 }
 
 .button-container {
-   margin-top: 100000000px; /* Adjust this value to reduce space */
+   margin-top: 20px; /* Adjust this value to reduce space */
    padding: 0; /* Ensure there's no padding */
 }
 
