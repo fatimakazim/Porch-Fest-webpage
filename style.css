@@ -1,13 +1,11 @@
-
 /* General styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
- 
- 
- body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
    background-image: url('bg.png');
    background-size: cover;
    background-repeat: no-repeat;
@@ -16,88 +14,73 @@
    font-family: 'Segoe UI', sans-serif;
    margin: 0;
    padding: 0;
-
 }
- 
- 
- .container {
-    width: 100%;
-    min-height: 100vh;
-    padding: 10px;
- }
- 
- 
- /* Full width class */
- .full-width {
-    width: 100%;
- }
- 
- 
- /* Navbar */
- .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
- }
- 
- 
- .navbar img.logo {
-    width: 100px;
- }
- 
- 
- nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
- }
- 
- 
- nav ul li {
-    list-style: none;
- }
- 
- 
- nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    transition: background 0.3s;
- }
- 
- 
- nav ul li a:hover {
-    background: rgba(184, 101, 101, 0.3);
-    border-radius: 5px;
- }
- 
- 
- /* Header */
- .header {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
- }
- 
- 
- .centered-image {
-    max-width: 700px;
-    height: auto;
- }
- .button-container {
-   margin-top: 10px; /* Adjust this value to reduce space */
+
+.container {
+   width: 100%;
+   min-height: 100vh;
+   padding: 10px;
+}
+
+/* Full width class */
+.full-width {
+   width: 100%;
+}
+
+/* Navbar */
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 0;
+}
+
+.navbar img.logo {
+   width: 100px;
+}
+
+nav ul {
+   list-style: none;
+   display: flex;
+   gap: 15px;
+}
+
+nav ul li {
+   list-style: none;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: white;
+   padding: 5px 10px;
+   transition: background 0.3s;
+}
+
+nav ul li a:hover {
+   background: rgba(184, 101, 101, 0.3);
+   border-radius: 5px;
+}
+
+/* Header */
+.header {
+   display: flex;
+   justify-content: center;
+   margin-top: 0; /* Remove extra margin */
+}
+
+.centered-image {
+   max-width: 700px;
+   height: auto;
+   display: block; /* Ensures no extra inline space */
+}
+
+.button-container {
+   margin-top: 100000000px; /* Adjust this value to reduce space */
    padding: 0; /* Ensure there's no padding */
 }
 
-img {
-   display: block; /* Remove bottom space if the image is treated like an inline element */
-}
-
- 
- 
- /* Button grid using flexbox */
- .grid-container {
+/* Button grid using flexbox */
+.grid-container {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
@@ -105,92 +88,79 @@ img {
    margin-top: 20px;
    width: 100%;
 }
- 
- 
- /* Website buttons */
- .website-button {
+
+/* Website buttons */
+.website-button {
    background: rgba(255, 255, 255, 0.1);
    border: none;
    border-radius: 10px;
-   padding: 10px;
+   padding: 0px;
    text-align: center;
    cursor: pointer;
    transition: background-color 0.3s, transform 0.3s;
    flex: 1 1 calc(50% - 20px); /* Adjust the flex value for two buttons per row */
-   min-height: 150px; /* Ensure buttons have enough height */
+   min-height: 750px; /* Ensure buttons have enough height */
 }
+
 @media (max-width: 768px) {
    .website-button {
        flex: 1 1 100%; /* Full width on smaller screens */
    }
 }
- 
- .button-image {
-    max-width: 80%; /* Limit image size for better appearance */
-    height: auto;
-    margin-bottom: 5px; /* Spacing between image and text */
- }
- 
- 
- .website-button h5 {
-    font-family: 'Changa One', sans-serif;
-    font-size: 1.2rem; /* Adjust font size */
-    color: white;
- }
- 
- 
- /* Hover effects */
- .website-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-5px);
- }
- 
- 
- /* Responsive Styles */
- @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
- 
- 
-    .grid-container {
-        flex-direction: column;
-        gap: 10px;
-    }
- 
- 
-    .website-button {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
- 
- 
-    .website-button h5 {
-        font-size: 1rem; /* Adjust font size */
-    }
- }
- 
- 
- @media (max-width: 480px) {
-    .navbar img.logo {
-        width: 80px;
-    }
- 
- 
-    .centered-image {
-        width: 90%;
-    }
- 
- 
-    .grid-container {
-        gap: 15px;
-    }
- 
- 
-    .website-button h5 {
-        font-size: 0.9rem; /* Further reduced font size */
-    }
- }
- 
 
- 
+.button-image {
+   max-width: 180%; /* Limit image size for better appearance */
+   height: auto;
+   margin-bottom: 5px; /* Spacing between image and text */
+}
+
+.website-button h5 {
+   font-family: 'Changa One', sans-serif;
+   font-size: 1.2rem; /* Adjust font size */
+   color: white;
+}
+
+/* Hover effects */
+.website-button:hover {
+   background-color: rgba(255, 255, 255, 0.3);
+   transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .navbar {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .grid-container {
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .website-button {
+       flex: 1 1 100%; /* Full width on smaller screens */
+   }
+
+   .website-button h5 {
+       font-size: 1rem; /* Adjust font size */
+   }
+}
+
+@media (max-width: 480px) {
+   .navbar img.logo {
+       width: 80px;
+   }
+
+   .centered-image {
+       width: 90%;
+   }
+
+   .grid-container {
+       gap: 15px;
+   }
+
+   .website-button h5 {
+       font-size: 0.9rem; /* Further reduced font size */
+   }
+}

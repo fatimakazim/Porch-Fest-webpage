@@ -11,7 +11,6 @@
         body, html {
             margin: 0;
             padding: 0;
-           
         }
 
         /* Set canvas to fill the entire window */
@@ -25,15 +24,14 @@
         }
 
         .container {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    min-height: 100vh; /* Ensure the container is tall enough */
-    overflow: auto; /* Allow scrolling in case of overflow */
-    display: flex;
-    flex-direction: column;
-}
-
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            min-height: 100vh; /* Ensure the container is tall enough */
+            overflow: auto; /* Allow scrolling in case of overflow */
+            display: flex;
+            flex-direction: column;
+        }
 
         .navbar {
             display: flex;
@@ -61,12 +59,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 0;
+            padding: 0; /* Remove padding to reduce space */
+            margin-top: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0; /* Remove all spacing between elements */
         }
 
         .centered-image {
             max-width: 100%; /* Ensure the image scales properly */
             height: auto; /* Maintain aspect ratio */
+            margin: 0; /* Remove any extra margin */
+        }
+
+        .button-container {
+            margin-top: -10px; /* Negative margin to reduce gap */
+            padding: 0; /* Ensure there's no padding */
         }
     </style>
 </head>
@@ -83,14 +95,14 @@
         </div>
 
         <header class="header">
-            <h1></h1>
-            <img src="your-image.png" alt="Centered Image" class="centered-image">
+            <div class="wrapper">
+                <img src="your-image.png" alt="Centered Image" class="centered-image">
+                <div class="button-container">
+                    <!-- Buttons will be dynamically generated here -->
+                </div>
+            </div>
         </header>
-        
     </div>
-    <div class="button-container">
-        <!-- Buttons will be dynamically generated here -->
-     </div>
 
     <!-- Add the p5.js library and your custom sketch.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>

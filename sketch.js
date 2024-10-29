@@ -2,7 +2,7 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90;
-const BUTTON_VERTICAL_SPACING = 0;
+const BUTTON_VERTICAL_SPACING = 5;
 const BUTTON_SPACING = 120;
 
 const BUTTON_IMAGES = [
