@@ -127,4 +127,13 @@ function mousePressed() {
 
 function windowResized() {
   resizeCanvas(windowWidth, max(windowHeight, 1500));
+  
+  function touchStarted() {
+    for (let button of buttons) {
+        if (button.isMouseOver()) {
+            window.open(button.link, '_blank');
+        }
+    }
+    return false; // Prevents any default touch behavior
+}
 }

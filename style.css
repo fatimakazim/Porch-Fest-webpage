@@ -75,6 +75,8 @@ nav ul li a:hover {
 }
 
 .button-container {
+   position: relative;
+    z-index: 2; /* Ensure buttons are above the canvas */
    margin-top: 20px; /* Adjust this value to reduce space */
    padding: 0; /* Ensure there's no padding */
 }
@@ -102,9 +104,14 @@ nav ul li a:hover {
    min-height: 750px; /* Ensure buttons have enough height */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
    .website-button {
-       flex: 1 1 100%; /* Full width on smaller screens */
+       min-height: 200px; /* Adjusted button height for mobile */
+       padding: 10px; /* Add padding for easier touch interactions */
+   }
+   .button-image {
+       max-width: 100%;
+       height: auto;
    }
 }
 
