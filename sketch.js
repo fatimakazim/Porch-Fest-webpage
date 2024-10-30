@@ -36,8 +36,6 @@ function setup() {
     particles[i] = new Particle(random(width), 0);
   }
 
-  // Adjust the BUTTON_VERTICAL_SPACING to a smaller value
-  const reducedVerticalSpacing = 5; // Reduced vertical space between image and buttons
   const buttonStartY = height / 4; // Change this value to move buttons higher
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
@@ -108,6 +106,10 @@ class ImageButton {
     translate(this.x, this.y);
     imageMode(CENTER);
     image(this.img, 0, 0, this.size, this.size);
+    noFill();
+    stroke(255, 0, 0); // Red outline for debugging
+    rectMode(CENTER);
+    rect(0, 0, this.size, this.size);
     pop();
   }
 
@@ -127,13 +129,23 @@ function mousePressed() {
 
 function windowResized() {
   resizeCanvas(windowWidth, max(windowHeight, 1500));
-  
-  function touchStarted() {
-    for (let button of buttons) {
-        if (button.isMouseOver()) {
-            window.open(button.link, '_blank');
-        }
+}
+
+function touchStarted() {
+  for (let button of buttons) {
+    if (button.isMouseOver()) {
+      window.open(button.link, '_blank');
     }
-    return false; // Prevents any default touch behavior
+  }
+  return false; // Prevents any default touch behavior
 }
+
+function touchEnded() {
+  for (let button of buttons) {
+    if (button.isMouseOver()) {
+      window.open(button.link, '_blank');
+    }
+  }
+  return false; // Prevents any default touch behavior
 }
+
