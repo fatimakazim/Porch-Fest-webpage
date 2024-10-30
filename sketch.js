@@ -117,12 +117,17 @@ class ImageButton {
     return mouseX > this.x - this.size / 2 && mouseX < this.x + this.size / 2 &&
            mouseY > this.y - this.size / 2 && mouseY < this.y + this.size / 2;
   }
+
+  openLink() {
+    // Open link in the same window by default, or use '_blank' for a new tab
+    window.open(this.link, '_blank'); 
+  }
 }
 
 function mousePressed() {
   for (let button of buttons) {
     if (button.isMouseOver()) {
-      window.open(button.link, '_blank');
+      button.openLink();
     }
   }
 }
@@ -134,16 +139,7 @@ function windowResized() {
 function touchStarted() {
   for (let button of buttons) {
     if (button.isMouseOver()) {
-      window.open(button.link, '_blank');
-    }
-  }
-  return false; // Prevents any default touch behavior
-}
-
-function touchEnded() {
-  for (let button of buttons) {
-    if (button.isMouseOver()) {
-      window.open(button.link, '_blank');
+      button.openLink();
     }
   }
   return false; // Prevents any default touch behavior
