@@ -154,4 +154,3 @@ function touchStarted() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight); // Ensure resizing keeps correct height
 }
-
