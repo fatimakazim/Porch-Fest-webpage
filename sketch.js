@@ -29,7 +29,7 @@ function preload() {
 }
 
 function setup() {
-  let canvasHeight = max(windowHeight, 1500); // Ensure canvas is larger than screen for scrollable content
+  let canvasHeight = max(windowHeight, 2000); // Set a larger canvas height to enable scrolling
   createCanvas(windowWidth, canvasHeight);
 
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
@@ -80,13 +80,12 @@ class Particle {
     translate(this.x, this.y);
     rotate(this.rotation);
     fill('#F7A43F');
-    stroke(0);
+    noStroke(); // Remove outline from particles
     beginShape();
     vertex(0, -this.size * 0.5);
     bezierVertex(this.size * 0.4, -this.size * 0.3, this.size * 0.4, this.size * 0.3, 0, this.size * 0.5);
     bezierVertex(-this.size * 0.4, this.size * 0.3, -this.size * 0.4, -this.size * 0.3, 0, -this.size * 0.5);
     endShape(CLOSE);
-    stroke(100);
     line(0, -this.size * 0.5, 0, this.size * 0.5);
     pop();
   }
@@ -107,7 +106,7 @@ class ImageButton {
     imageMode(CENTER);
     image(this.img, 0, 0, this.size, this.size);
     noFill();
-    stroke(255, 0, 0); // Red outline for debugging
+    noStroke(); // Remove red outline from buttons
     rectMode(CENTER);
     rect(0, 0, this.size, this.size);
     pop();
@@ -119,8 +118,7 @@ class ImageButton {
   }
 
   openLink() {
-    // Open link in the same window by default, or use '_blank' for a new tab
-    window.open(this.link, '_blank'); 
+    window.open(this.link, '_self'); // Open link in the same window
   }
 }
 
@@ -132,10 +130,6 @@ function mousePressed() {
   }
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, max(windowHeight, 1500));
-}
-
 function touchStarted() {
   for (let button of buttons) {
     if (button.isMouseOver()) {
@@ -143,5 +137,9 @@ function touchStarted() {
     }
   }
   return false; // Prevents any default touch behavior
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, max(windowHeight, 2000)); // Ensure resizing keeps large canvas height
 }
 
