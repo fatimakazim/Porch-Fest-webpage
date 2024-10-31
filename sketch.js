@@ -2,7 +2,7 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90;
-const BUTTON_VERTICAL_SPACING = 10; // Increased spacing to 10
+const BUTTON_VERTICAL_SPACING = 20; // Increased spacing to avoid overlap
 const BUTTON_SPACING = 120; // Horizontal spacing
 
 const BUTTON_IMAGES = [
@@ -44,7 +44,7 @@ function setup() {
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
-    let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_VERTICAL_SPACING + 30); // Add 30 pixels for more space
+    let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_VERTICAL_SPACING + 50); // Adjust vertical spacing further
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i], BUTTON_TITLES[i]));
   }
 }
@@ -120,7 +120,7 @@ class ImageButton {
     textSize(16); // Set font size for titles
     textFont("Segoe UI"); // Set font family
     fill(255); // Change to the desired color for the title
-    text(this.title, 0, this.size / 2 + 40); // Adjust vertical position to 40 for more space
+    text(this.title, 0, this.size / 2 + 60); // Increased space to 60 for more clarity
     pop();
   }
 
