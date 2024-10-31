@@ -2,8 +2,8 @@ let NUM_OF_PARTICLES = 11;
 let particles = [];
 let buttons = [];
 const BUTTON_SIZE = 90;
-const BUTTON_VERTICAL_SPACING = 5;
-const BUTTON_SPACING = 120;
+const BUTTON_VERTICAL_SPACING = 10; // Increased spacing to 10
+const BUTTON_SPACING = 120; // Horizontal spacing
 
 const BUTTON_IMAGES = [
   'image1.png',
@@ -13,9 +13,9 @@ const BUTTON_IMAGES = [
 ];
 
 const BUTTON_LINKS = [
-  'https://link1.com',
+  'https://admodc.org/porchfest/#lineup',
   'https://www.google.com/maps/d/viewer?mid=1DQCebtayCO6PHkKJgCTuzFEA6v-FsdU&femb=1&ll=38.92153793691423%2C-77.04543470916516&z=17',
-  'https://link3.com',
+  'https://admodc.org/porchfest/#discounts',
   'https://link4.com',
 ];
 
@@ -33,24 +33,24 @@ function preload() {
 }
 
 function setup() {
-  let canvasHeight = max(windowHeight, 2000); // Set a larger canvas height to enable scrolling
-  createCanvas(windowWidth, canvasHeight);
+  createCanvas(windowWidth, windowHeight);
 
   for (let i = 0; i < NUM_OF_PARTICLES; i++) {
     particles[i] = new Particle(random(width), 0);
   }
 
-  const buttonStartY = height / 4; // Change this value to move buttons higher
+  // Calculate the initial button start position
+  const buttonStartY = height / 2 + 150; // Lower the buttons further down
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
-    let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING;
+    let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_VERTICAL_SPACING + 30); // Add 30 pixels for more space
     buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i], BUTTON_TITLES[i]));
   }
 }
 
 function draw() {
-  image(backgroundImage, 0, 0, width, height); 
+  image(backgroundImage, 0, 0, width, height);
 
   for (let i = 0; i < particles.length; i++) {
     particles[i].update();
@@ -84,7 +84,7 @@ class Particle {
     translate(this.x, this.y);
     rotate(this.rotation);
     fill('#F7A43F');
-    noStroke(); // Remove outline from particles
+    noStroke();
     beginShape();
     vertex(0, -this.size * 0.5);
     bezierVertex(this.size * 0.4, -this.size * 0.3, this.size * 0.4, this.size * 0.3, 0, this.size * 0.5);
@@ -111,7 +111,7 @@ class ImageButton {
     imageMode(CENTER);
     image(this.img, 0, 0, this.size, this.size);
     noFill();
-    noStroke(); // Remove outline from buttons
+    noStroke();
     rectMode(CENTER);
     rect(0, 0, this.size, this.size);
 
@@ -120,7 +120,7 @@ class ImageButton {
     textSize(16); // Set font size for titles
     textFont("Segoe UI"); // Set font family
     fill(255); // Change to the desired color for the title
-    text(this.title, 0, this.size / 2 + 20); // Adjust vertical position if needed
+    text(this.title, 0, this.size / 2 + 40); // Adjust vertical position to 40 for more space
     pop();
   }
 
@@ -152,6 +152,6 @@ function touchStarted() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, max(windowHeight, 2000)); // Ensure resizing keeps large canvas height
+  resizeCanvas(windowWidth, windowHeight); // Ensure resizing keeps correct height
 }
 
