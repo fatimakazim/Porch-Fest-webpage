@@ -10,16 +10,20 @@ const BUTTON_IMAGES = [
   'image2.png',
   'image3.png',
   'image4.png',
-  'image5.png',
-  'image6.png'
 ];
+
 const BUTTON_LINKS = [
   'https://link1.com',
   'https://www.google.com/maps/d/viewer?mid=1DQCebtayCO6PHkKJgCTuzFEA6v-FsdU&femb=1&ll=38.92153793691423%2C-77.04543470916516&z=17',
   'https://link3.com',
   'https://link4.com',
-  'https://link5.com',
-  'https://link6.com'
+];
+
+const BUTTON_TITLES = [
+  'Schedule',
+  'Map',
+  'Wristband discounts',
+  'Our sponsors',
 ];
 
 let backgroundImage;
@@ -41,7 +45,7 @@ function setup() {
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;
     let y = buttonStartY + Math.floor(i / 2) * (BUTTON_SIZE + BUTTON_SPACING) + BUTTON_VERTICAL_SPACING;
-    buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i]));
+    buttons.push(new ImageButton(x, y, BUTTON_SIZE, BUTTON_IMAGES[i], BUTTON_LINKS[i], BUTTON_TITLES[i]));
   }
 }
 
@@ -92,12 +96,13 @@ class Particle {
 }
 
 class ImageButton {
-  constructor(x, y, size, imgPath, link) {
+  constructor(x, y, size, imgPath, link, title) {
     this.x = x;
     this.y = y;
     this.size = size;
     this.img = loadImage(imgPath);
     this.link = link;
+    this.title = title; // Store title
   }
 
   display() {
@@ -106,9 +111,16 @@ class ImageButton {
     imageMode(CENTER);
     image(this.img, 0, 0, this.size, this.size);
     noFill();
-    noStroke(); // Remove red outline from buttons
+    noStroke(); // Remove outline from buttons
     rectMode(CENTER);
     rect(0, 0, this.size, this.size);
+
+    // Display title below the button
+    textAlign(CENTER);
+    textSize(16); // Set font size for titles
+    textFont("Segoe UI"); // Set font family
+    fill(255); // Change to the desired color for the title
+    text(this.title, 0, this.size / 2 + 20); // Adjust vertical position if needed
     pop();
   }
 
