@@ -7,49 +7,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <style>
-       html, body {
-  height: 100%;
-  margin: 0;
-  overflow-y: scroll; /* Ensures vertical scrolling is enabled */
-}
+        /* Ensure page uses full height and width without overflow issues */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow-y: auto;
+        }
 
-
-        /* Set canvas to fill the entire window */
+        /* Background canvas setup */
         canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Send the canvas to the back */
+            z-index: -1;
         }
 
-        .container {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    min-height: 100vh; /* Ensure the container is tall enough */
-    overflow: auto; /* Allow scrolling in case of overflow */
-    display: flex;
-    flex-direction: column;
-}
+      
 
-
+        /* Navbar styling */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 50px;
+            padding: 10px 20px;
         }
 
         .navbar ul {
             display: flex;
             list-style: none;
-        }
-
-        .navbar ul li {
-            margin-left: 20px;
+            gap: 20px;
         }
 
         .navbar ul li a {
@@ -58,16 +48,26 @@
             color: #fff;
         }
 
+        /* Centered image in header */
         .header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 0;
+            padding: 20px 0;
         }
 
         .centered-image {
-            max-width: 100%; /* Ensure the image scales properly */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Button container styling */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-bottom: 20px;
         }
     </style>
 </head>
@@ -84,16 +84,14 @@
         </div>
 
         <header class="header">
-            <h1></h1>
             <img src="your-image.png" alt="Centered Image" class="centered-image">
         </header>
-        
     </div>
-    <div class="button-container">
-        <!-- Buttons will be dynamically generated here -->
-     </div>
 
-    <!-- Add the p5.js library and your custom sketch.js -->
+    <div class="button-container">
+        <!-- You can add buttons here if needed, or leave empty if not -->
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="sketch.js"></script>
 </body>

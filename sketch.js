@@ -40,7 +40,7 @@ function setup() {
   }
 
   // Calculate the initial button start position
-  const buttonStartY = height / 2 + 150; // Lower the buttons further down
+  const buttonStartY = height / 2 + 10; // Lower the buttons further down
 
   for (let i = 0; i < BUTTON_IMAGES.length; i++) {
     let x = width / 2 + (i % 2) * (BUTTON_SIZE + BUTTON_SPACING) - (BUTTON_SIZE + BUTTON_SPACING) / 2;

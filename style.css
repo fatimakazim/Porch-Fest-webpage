@@ -3,24 +3,25 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   
 }
 
 body {
-   background-image: url('bg.png');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-   min-height: 100vh; /* Ensure the body takes full height of the screen */
+   min-height: 10vh; /* this thing is imp */
    font-family: 'Segoe UI', sans-serif;
-   margin: 0;
-   padding: 0;
 }
 
+/* Container settings */
 .container {
    width: 100%;
-   min-height: 100vh;
+   min-height: 15vh;
    padding: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
 }
 
 /* Full width class */
@@ -33,7 +34,8 @@ body {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 15px 0;
+   padding: 10px 0;
+   width: 100%;
 }
 
 .navbar img.logo {
@@ -44,10 +46,6 @@ nav ul {
    list-style: none;
    display: flex;
    gap: 15px;
-}
-
-nav ul li {
-   list-style: none;
 }
 
 nav ul li a {
@@ -66,30 +64,26 @@ nav ul li a:hover {
 .header {
    display: flex;
    justify-content: center;
-   margin-top: 0; /* Remove extra margin */
+   align-items: center;
+   padding: 25px 0;
+   min-height: 300px;
+   flex-direction: column;
 }
 
 .centered-image {
    max-width: 700px;
    height: auto;
-   display: block; /* Ensures no extra inline space */
+   display: block;
+   margin-bottom: 20px; /* Space below image */
 }
 
+/* Button container adjustments */
 .button-container {
-   position: relative;
-    z-index: 2; /* Ensure buttons are above the canvas */
-   margin-top: 20px; /* Adjust this value to reduce space */
-   padding: 0; /* Ensure there's no padding */
-}
-
-/* Button grid using flexbox */
-.grid-container {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   gap: 10px;
-   margin-top: 20px;
    width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 10px; /* Space between buttons */
+   padding-bottom: 20px; /* Optional padding to adjust spacing from the bottom */
 }
 
 /* Website buttons */
@@ -97,18 +91,19 @@ nav ul li a:hover {
    background: rgba(255, 255, 255, 0.1);
    border: none;
    border-radius: 10px;
-   padding: 0px;
+   padding: 10px;
    text-align: center;
    cursor: pointer;
    transition: background-color 0.3s, transform 0.3s;
-   flex: 1 1 calc(50% - 20px); /* Adjust the flex value for two buttons per row */
-   min-height: 750px; /* Ensure buttons have enough height */
+   flex: 1 1 calc(50% - 20px);
+   min-height: 750px;
 }
 
+/* Responsive styling for smaller screens */
 @media (max-width: 480px) {
    .website-button {
-       min-height: 200px; /* Adjusted button height for mobile */
-       padding: 10px; /* Add padding for easier touch interactions */
+       min-height: 200px;
+       padding: 10px;
    }
    .button-image {
        max-width: 100%;
@@ -117,14 +112,14 @@ nav ul li a:hover {
 }
 
 .button-image {
-   max-width: 180%; /* Limit image size for better appearance */
+   max-width: 180%;
    height: auto;
-   margin-bottom: 5px; /* Spacing between image and text */
+   margin-bottom: 5px;
 }
 
 .website-button h5 {
    font-family: 'Changa One', sans-serif;
-   font-size: 1.2rem; /* Adjust font size */
+   font-size: 1.2rem;
    color: white;
 }
 
@@ -134,7 +129,7 @@ nav ul li a:hover {
    transform: translateY(-5px);
 }
 
-/* Responsive Styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
    .navbar {
        flex-direction: column;
@@ -147,11 +142,11 @@ nav ul li a:hover {
    }
 
    .website-button {
-       flex: 1 1 100%; /* Full width on smaller screens */
+       flex: 1 1 100%;
    }
 
    .website-button h5 {
-       font-size: 1rem; /* Adjust font size */
+       font-size: 1rem;
    }
 }
 
@@ -162,6 +157,7 @@ nav ul li a:hover {
 
    .centered-image {
        width: 90%;
+       margin-bottom: 10px; /* Additional margin to avoid overlap */
    }
 
    .grid-container {
@@ -169,6 +165,8 @@ nav ul li a:hover {
    }
 
    .website-button h5 {
-       font-size: 0.9rem; /* Further reduced font size */
+       font-size: 0.9rem;
    }
 }
+
+
