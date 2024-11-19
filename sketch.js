@@ -13,7 +13,8 @@ const BUTTON_IMAGES = [
 ];
 
 const BUTTON_LINKS = [
-  '/Users/fatimakazim/Desktop/Porch Fest webpage/schedule.pdf',
+  'https://raw.githubusercontent.com/fatimakazim/Porch-Fest-webpage/8dc10802ee1d8f67af616741dc4998ab2eaab816/schedule.pdf ',
+
   'https://www.google.com/maps/d/viewer?mid=1DQCebtayCO6PHkKJgCTuzFEA6v-FsdU&femb=1&ll=38.92153793691423%2C-77.04543470916516&z=17',
   'https://admodc.org/porchfest/#discounts',
   'https://link4.com',
