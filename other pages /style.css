@@ -1,0 +1,22 @@
+/* Ensure the body and html elements take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-screen image container */
+.image-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make the image fill the entire screen while maintaining aspect ratio */
+.image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
