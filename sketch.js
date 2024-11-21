@@ -16,8 +16,8 @@ const BUTTON_LINKS = [
   'https://fatimakazim.github.io/schedule-page/',
 
   'https://www.google.com/maps/d/viewer?mid=1DQCebtayCO6PHkKJgCTuzFEA6v-FsdU&femb=1&ll=38.92153793691423%2C-77.04543470916516&z=17',
-  'https://admodc.org/porchfest/#discounts',
-  'https://link4.com',
+  ' https://fatimakazim.github.io/discounts-bands/',
+  'https://fatimakazim.github.io/sponsors/',
 ];
 
 const BUTTON_TITLES = [
